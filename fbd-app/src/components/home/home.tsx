@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import { Header } from "../header/header";
+import HeaderComponent from "../header/header";
+import BodyComponent from "../body/body";
 
-export class Home extends Component {
-  render() {
-    return (
-      <div>
-        <Header></Header>
-      </div>
-    );
-  }
-}
+const HomeComponent: React.FC = () => {
+  return (
+    <div>
+      <HeaderComponent></HeaderComponent>
+      <BodyComponent></BodyComponent>
+    </div>
+  );
+};
+
+export default HomeComponent;

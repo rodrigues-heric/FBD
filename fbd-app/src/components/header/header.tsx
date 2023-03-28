@@ -1,15 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
+import "./header.css";
 
-export class Header extends Component {
-  render() {
-    return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-md">
-          <a href="#" className="navbar-brand">
-            CatCafé++
-          </a>
-        </div>
-      </nav>
-    );
-  }
-}
+const HeaderComponent: React.FC = () => {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-background">
+      <div className="container-fluid">
+        <span className="mb-0 py-2 h3">CatCafé++</span>
+      </div>
+    </nav>
+  );
+};
+
+export default HeaderComponent;
