@@ -2,3 +2,8 @@
   background-color: var(--dark-primary);
   color: var(--dark-font);
 }
+
+.navbar-title-align {
+  align-items: start;
+  margin-left: 1rem;
+}

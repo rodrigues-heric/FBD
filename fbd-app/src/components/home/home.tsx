@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import HeaderComponent from "../header/header";
 import BodyComponent from "../body/body";
+import "./home.css";
 
 const HomeComponent: React.FC = () => {
   return (

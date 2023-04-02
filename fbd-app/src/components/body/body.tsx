@@ -2,8 +2,9 @@ import React from "react";
 import "./body.css";
 
 import CardComponent from "../generics/card/card";
+import CreatedByComponent from "../generics/created-by/created-by";
 
-const CardContent = () => {
+const CardContent: () => JSX.Element = () => {
   return (
     <div>
       <select className="form-select">
@@ -22,14 +23,16 @@ const BodyComponent: React.FC = () => {
     <div className="body-container">
       <div className="row">
         <div className="col-4"></div>
-        <div className="col-4">
+        <div className="col-4 grid-center">
           <CardComponent
             title="Seja bem-vindo!"
             subtitle="Selecione seu login"
             body={CardContent()}
           ></CardComponent>
         </div>
-        <div className="col-4"></div>
+        <div className="col-4 flex-align-bottom flex-align-end pb-3">
+          <CreatedByComponent></CreatedByComponent>
+        </div>
       </div>
     </div>
   );
