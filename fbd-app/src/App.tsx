@@ -1,9 +1,10 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HomeComponent from "./components/home/home";
+
+import AppRoutes from "./routes/routes";
 
 function App() {
-  return <HomeComponent></HomeComponent>;
+  return <AppRoutes></AppRoutes>;
 }
 
 export default App;

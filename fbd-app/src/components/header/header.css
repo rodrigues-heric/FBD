@@ -4,6 +4,10 @@
 }
 
 .navbar-title-align {
-  align-items: start;
   margin-left: 1rem;
+}
+
+.space-items {
+  display: flex;
+  justify-content: space-between;
 }
