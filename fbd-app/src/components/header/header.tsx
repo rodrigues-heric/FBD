@@ -1,10 +1,19 @@
 import React from "react";
+import { Logout } from "@mui/icons-material";
 import "./header.css";
+import { Link } from "react-router-dom";
 
 const HeaderUserName: (userName: string) => JSX.Element = (
   userName: string
 ) => {
-  return <span className="me-4">{userName}</span>;
+  return (
+    <span className="me-4">
+      {userName} &nbsp; &nbsp;
+      <Link to={"/"}>
+        <Logout color="warning"></Logout>
+      </Link>
+    </span>
+  );
 };
 
 const HeaderComponent: React.FC<{ user?: string }> = ({ user }) => {

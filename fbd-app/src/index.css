@@ -9,6 +9,7 @@ html {
   width: 100%;
   color: var(--dark-font);
   background-color: var(--dark-bg);
+  font-family: "Roboto";
 }
 
 body {
