@@ -11,14 +11,14 @@ const foodSubtitle: string = "Escolha o que deseja comer";
 const foodButtonText: string = "Fazer pedido";
 const foodPageLink: string = "/food";
 
-const accommodationImagePath: string = "cat_cafe_logo_dark.png";
+const accommodationImagePath: string = "vip_room.png";
 const accommodationTitle: string = "Acomodação";
 const accommodationSubtitle: string = "Escolha uma sala";
 const accommodationButtonText: string = "Selecionar sala";
 const accommodationPageLink: string = "/accommodation";
 
-const recreationImagePath: string = "cat_cafe_logo_dark.png";
-const recreationTitle: string = "Recreação";
+const recreationImagePath: string = "videogame.png";
+const recreationTitle: string = "Lazer";
 const recreationSubtitle: string = "Escolha uma atividade";
 const recreationButtonText: string = "Selecionar atividade";
 const recreationPageLink: string = "/recreation";

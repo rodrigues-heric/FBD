@@ -2,3 +2,26 @@
   color: var(--dark-font);
   background-color: var(--dark-bg);
 }
+
+.center-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card-background {
+  color: var(--dark-font);
+  background-color: var(--dark-primary);
+}
+
+.card-max-width {
+  max-width: 400px;
+}
+
+.image-height {
+  height: 350px;
+}
+
+.center-align {
+  align-items: center;
+}
