@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useState } from "react";
+import React, { ChangeEventHandler, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
 
@@ -32,6 +32,14 @@ const CardContent: () => JSX.Element = () => {
 };
 
 const LoginComponent: React.FC = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  });
+
   return (
     <div className="body-container">
       <div className="row">
