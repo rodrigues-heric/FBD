@@ -17,8 +17,22 @@ async function getClients() {
   return result.rows;
 }
 
+async function getDeptAvgSalary() {
+  const result = await localDB.getDeptAvgSalary();
+  console.log("Fecthed avarege salary by department.");
+  return result.rows;
+}
+
+app.get("/getVIPClients", async (req, res) => {
+  res.json({ content: await getVIPClients() });
+});
+
 app.get("/getClients", async (req, res) => {
   res.json({ content: await getClients() });
+});
+
+app.get("/getDeptAvgSalary", async (req, res) => {
+  res.json({ content: await getDeptAvgSalary() });
 });
 
 app.listen(PORT, () => {

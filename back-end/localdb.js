@@ -18,6 +18,12 @@ FROM Cliente AS c
 JOIN Pessoa AS p ON c.codigo = p.codigo
 `;
 
+const getDeptAvgSalaryQuery = `
+SELECT nomed AS NomeDepartamento, AVG(salario) AS MediaSalario, nome AS NomeGerente
+FROM Departamento NATURAL JOIN Funcionario NATURAL JOIN Gerente NATURAL JOIN Pessoa
+GROUP BY nomed, nome
+`;
+
 async function getVIPClients() {
   try {
     const res = await pool.query(getVIPClientsQuery);
@@ -38,7 +44,18 @@ async function getClients() {
   }
 }
 
+async function getDeptAvgSalary() {
+  try {
+    const res = await pool.query(getDeptAvgSalaryQuery);
+    return res;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 module.exports = {
   getVIPClients,
   getClients,
+  getDeptAvgSalary,
 };

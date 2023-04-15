@@ -2,39 +2,10 @@ import React, { ChangeEventHandler, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
 
-import CardComponent from "../generics/card/card";
 import CreatedByComponent from "../generics/created-by/created-by";
-
-const CardContent: (data: any) => JSX.Element = (data) => {
-  const [selectedOption, setOption] = useState("");
-
-  const onSelectOpion: ChangeEventHandler<HTMLSelectElement> = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setOption(event.target.value);
-  };
-
-  return (
-    <div>
-      <select className="form-select" onChange={onSelectOpion}>
-        <option value="">Selecione</option>
-        {data &&
-          Array.from(data).map((client: any) => {
-            return <option>{client.nome}</option>;
-          })}
-      </select>
-      {selectedOption ? (
-        <Link to={`/panel/${selectedOption}`} className="btn btn-primary mt-2">
-          Login
-        </Link>
-      ) : null}
-    </div>
-  );
-};
 
 const LoginComponent: React.FC = () => {
   const [clients, setClients] = useState<any>([]);
-  const [loading, setLoading] = useState(true);
 
   const [selectedOption, setOption] = useState("");
 
@@ -52,7 +23,6 @@ const LoginComponent: React.FC = () => {
         })
         .then((data) => {
           setClients(data.content);
-          setLoading(false);
         });
     };
     getClients();

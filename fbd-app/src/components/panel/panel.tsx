@@ -23,6 +23,12 @@ const recreationSubtitle: string = "Escolha uma atividade";
 const recreationButtonText: string = "Selecionar atividade";
 const recreationPageLink: string = "/recreation";
 
+const avgSalaryImagePath: string = "cat_cafe_logo.png";
+const avgSalaryTitle: string = "Média salarial por departamento";
+const avgSalarySubtitle: string = "Conheça nossos gerentes e departamentos";
+const avgSalaryButtonText: string = "Saiba mais";
+const avgSalaryPageLink: string = "/about";
+
 const PanelComponent: React.FC = () => {
   const routeParams = useParams();
   const userName = routeParams.userName;
@@ -37,15 +43,26 @@ const PanelComponent: React.FC = () => {
             <small className="text-muted">O que deseja?</small>
           </p>
         </h4>
-        <div className="row mt-4">
+        <div className="row mt-4 mb-4">
           <div className="col-4 center-align">
-            <CardPanelComponent
-              imgName={foodImagePath}
-              title={foodTitle}
-              subtitle={foodSubtitle}
-              buttonText={foodButtonText}
-              pageLink={`${foodPageLink}/${userName}`}
-            ></CardPanelComponent>
+            <div className="row">
+              <CardPanelComponent
+                imgName={foodImagePath}
+                title={foodTitle}
+                subtitle={foodSubtitle}
+                buttonText={foodButtonText}
+                pageLink={`${foodPageLink}/${userName}`}
+              ></CardPanelComponent>
+            </div>
+            <div className="row mt-4">
+              <CardPanelComponent
+                imgName={avgSalaryImagePath}
+                title={avgSalaryTitle}
+                subtitle={avgSalarySubtitle}
+                buttonText={avgSalaryButtonText}
+                pageLink={`${avgSalaryPageLink}/${userName}`}
+              ></CardPanelComponent>
+            </div>
           </div>
           <div className="col-4 center-align">
             <CardPanelComponent

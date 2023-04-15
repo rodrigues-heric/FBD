@@ -6,6 +6,7 @@ import PanelComponent from "../components/panel/panel";
 import FoodComponent from "../components/food/food";
 import AccommodationComponent from "../components/accommodation/accommodation";
 import RecreationComponent from "../components/recreation/recreation";
+import AboutComponent from "../components/about/about";
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const AppRoutes = () => {
           path="/accommodation/:userName"
         />
         <Route Component={RecreationComponent} path="/recreation/:userName" />
+        <Route Component={AboutComponent} path="/about/:userName" />
       </Routes>
     </BrowserRouter>
   );
