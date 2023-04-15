@@ -75,6 +75,12 @@ AND NOT EXISTS  (SELECT codcliente
   WHERE q.codcliente = c.codigo)
 `;
 
+const getVipCostQuery = `
+SELECT ClientesVip.nome, SUM(preco) AS custo
+FROM ConsumoLazer JOIN ClientesVip ON ConsumoLazer.codcli = ClientesVip.Codigo JOIN Lazer ON ConsumoLazer.codla = Lazer.codigo
+GROUP BY ClientesVip.nome
+`;
+
 async function getVIPClients() {
   try {
     const res = await pool.query(getVIPClientsQuery);
@@ -145,6 +151,16 @@ async function getNotPayers() {
   }
 }
 
+async function getVipCost() {
+  try {
+    const res = await pool.query(getVipCostQuery);
+    return res;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 module.exports = {
   getVIPClients,
   getClients,
@@ -153,4 +169,5 @@ module.exports = {
   getVipIoga,
   getMackbook,
   getNotPayers,
+  getVipCost,
 };

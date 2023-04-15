@@ -40,6 +40,11 @@ const aboutSubtitle: string = "Descubra a média salárial por departamento";
 const aboutButtonText: string = "Saiba mais";
 const aboutPageLink: string = "/about";
 
+const vipCostsTitle: string = "Saiba os gastos dos VIPs";
+const vipCostsSubtitle: string = "Descubra quanto eles gastaram em lazer";
+const vipCostsButtonText: string = "Descubra";
+const vipCostsPageLink: string = "/vipcosts";
+
 const PanelComponent: React.FC = () => {
   const routeParams = useParams();
   const userName = routeParams.userName;
@@ -72,6 +77,15 @@ const PanelComponent: React.FC = () => {
                 subtitle={avgSalarySubtitle}
                 buttonText={avgSalaryButtonText}
                 pageLink={`${avgSalaryPageLink}/${userName}`}
+              ></CardPanelComponent>
+            </div>
+            <div className="row mt-4">
+              <CardPanelComponent
+                imgName={logoImageDark}
+                title={vipCostsTitle}
+                subtitle={vipCostsSubtitle}
+                buttonText={vipCostsButtonText}
+                pageLink={`${vipCostsPageLink}/${userName}`}
               ></CardPanelComponent>
             </div>
           </div>

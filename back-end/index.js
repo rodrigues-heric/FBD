@@ -47,6 +47,12 @@ async function getNotPayers() {
   return result.rows;
 }
 
+async function getVipCost() {
+  const result = await localDB.getVipCost();
+  console.log("Fetched VIP costs.");
+  return result.rows;
+}
+
 app.get("/getVIPClients", async (req, res) => {
   res.json({ content: await getVIPClients() });
 });
@@ -73,6 +79,10 @@ app.get("/getMackbook", async (req, res) => {
 
 app.get("/getNotPayers", async (req, res) => {
   res.json({ content: await getNotPayers() });
+});
+
+app.get("/getVipCosts", async (req, res) => {
+  res.json({ content: await getVipCost() });
 });
 
 app.listen(PORT, () => {
