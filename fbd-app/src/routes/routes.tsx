@@ -5,6 +5,7 @@ import HomeComponent from "../components/home/home";
 import PanelComponent from "../components/panel/panel";
 import AboutComponent from "../components/about/about";
 import GirlsComponent from "../components/girls/girls";
+import VipIogaComponent from "../components/vipIoga/vipIoga";
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
         <Route Component={PanelComponent} path="/panel/:userName" />
         <Route Component={AboutComponent} path="/about/:userName" />
         <Route Component={GirlsComponent} path="/girls/:userName" />
+        <Route Component={VipIogaComponent} path="/vipioga/:userName" />
       </Routes>
     </BrowserRouter>
   );

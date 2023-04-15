@@ -13,11 +13,10 @@ const womenWorkersSubtitle: string = "Conheça o CatCafe++ Girls";
 const womenWorkersButtonText: string = "Saiba mais";
 const womenWorkersPageLink: string = "/girls";
 
-const accommodationImagePath: string = "vip_room.png";
-const accommodationTitle: string = "Acomodação";
-const accommodationSubtitle: string = "Escolha uma sala";
-const accommodationButtonText: string = "Selecionar sala";
-const accommodationPageLink: string = "/accommodation";
+const vipIogaTitle: string = "VIP Ioga";
+const vipIogaSubtitle: string = "Veja quais clientes VIP fizeram ioga";
+const vipIogaButtonText: string = "Descobrir";
+const vipIogaPageLink: string = "/vipioga";
 
 const recreationImagePath: string = "videogame.png";
 const recreationTitle: string = "Lazer";
@@ -68,11 +67,11 @@ const PanelComponent: React.FC = () => {
           </div>
           <div className="col-4 center-align">
             <CardPanelComponent
-              imgName={accommodationImagePath}
-              title={accommodationTitle}
-              subtitle={accommodationSubtitle}
-              buttonText={accommodationButtonText}
-              pageLink={`${accommodationPageLink}/${userName}`}
+              imgName={logoImage}
+              title={vipIogaTitle}
+              subtitle={vipIogaSubtitle}
+              buttonText={vipIogaButtonText}
+              pageLink={`${vipIogaPageLink}/${userName}`}
             ></CardPanelComponent>
           </div>
           <div className="col-4 center-align">

@@ -29,6 +29,12 @@ async function getCatCafeGirls() {
   return result.rows;
 }
 
+async function getVipIoga() {
+  const result = await localDB.getVipIoga();
+  console.log("Fetched VIP ioga clients.");
+  return result.rows;
+}
+
 app.get("/getVIPClients", async (req, res) => {
   res.json({ content: await getVIPClients() });
 });
@@ -43,6 +49,10 @@ app.get("/getDeptAvgSalary", async (req, res) => {
 
 app.get("/getCatCafeGirls", async (req, res) => {
   res.json({ content: await getCatCafeGirls() });
+});
+
+app.get("/getVipIoga", async (req, res) => {
+  res.json({ content: await getVipIoga() });
 });
 
 app.listen(PORT, () => {

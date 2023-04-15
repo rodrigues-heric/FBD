@@ -31,6 +31,18 @@ GROUP BY Pessoa.nome, Profissao.nome, Pessoa.genero
 HAVING genero = 'F'
 `;
 
+const getVipIogaQuery = `
+SELECT nome
+FROM ClientesVip
+WHERE codigo IN (SELECT codcliente
+  FROM ReservasQuartos
+  WHERE codquarto IN (SELECT codigo
+    FROM Quarto
+    WHERE codigo IN (SELECT codigo
+      FROM Servico
+      WHERE categoria = 'ioga')))
+`;
+
 async function getVIPClients() {
   try {
     const res = await pool.query(getVIPClientsQuery);
@@ -71,9 +83,20 @@ async function getCatCafeGirls() {
   }
 }
 
+async function getVipIoga() {
+  try {
+    const res = await pool.query(getVipIogaQuery);
+    return res;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 module.exports = {
   getVIPClients,
   getClients,
   getDeptAvgSalary,
   getCatCafeGirls,
+  getVipIoga,
 };
