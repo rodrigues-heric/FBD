@@ -81,6 +81,25 @@ FROM ConsumoLazer JOIN ClientesVip ON ConsumoLazer.codcli = ClientesVip.Codigo J
 GROUP BY ClientesVip.nome
 `;
 
+const getClientsHidroQuery = `
+SELECT *
+FROM Pessoa NATURAL JOIN Cliente
+WHERE codigo IN (SELECT codcli
+  FROM ConsumoAlimenticio
+  WHERE codali IN (SELECT codigo
+    FROM Alimento
+    WHERE codigo IN (SELECT codigo
+      FROM Preparado
+      WHERE caloria < 1800.0)))
+AND codigo IN (SELECT codcliente
+  FROM ReservasQuartos
+  WHERE codquarto IN (SELECT codigo
+    FROM Locacao
+    WHERE preco < 2000.0 AND codigo IN (SELECT codigo
+      FROM Quarto
+      WHERE hidromassagem = true)))
+`;
+
 async function getVIPClients() {
   try {
     const res = await pool.query(getVIPClientsQuery);
@@ -161,6 +180,16 @@ async function getVipCost() {
   }
 }
 
+async function getClientsHidro() {
+  try {
+    const res = await pool.query(getClientsHidroQuery);
+    return res;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 module.exports = {
   getVIPClients,
   getClients,
@@ -170,4 +199,5 @@ module.exports = {
   getMackbook,
   getNotPayers,
   getVipCost,
+  getClientsHidro,
 };

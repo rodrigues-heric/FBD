@@ -9,6 +9,7 @@ import VipIogaComponent from "../components/vipIoga/vipIoga";
 import MackbookComponent from "../components/mackbook/mackbook";
 import NotPayersComponent from "../components/notpayers/notpayers";
 import VipCostsComponent from "../components/vipcosts/vipcosts";
+import HidroComponent from "../components/hidro/hidro";
 
 const AppRoutes = () => {
   return (
@@ -22,6 +23,7 @@ const AppRoutes = () => {
         <Route Component={MackbookComponent} path="/mackbook/:userName" />
         <Route Component={NotPayersComponent} path="/notpayers/:userName" />
         <Route Component={VipCostsComponent} path="/vipcosts/:userName" />
+        <Route Component={HidroComponent} path="/hidro/:userName" />
       </Routes>
     </BrowserRouter>
   );

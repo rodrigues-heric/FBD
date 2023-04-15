@@ -53,6 +53,12 @@ async function getVipCost() {
   return result.rows;
 }
 
+async function getClientsHidro() {
+  const result = await localDB.getClientsHidro();
+  console.log("Fecthed clients that used hidro");
+  return result.rows;
+}
+
 app.get("/getVIPClients", async (req, res) => {
   res.json({ content: await getVIPClients() });
 });
@@ -83,6 +89,10 @@ app.get("/getNotPayers", async (req, res) => {
 
 app.get("/getVipCosts", async (req, res) => {
   res.json({ content: await getVipCost() });
+});
+
+app.get("/getClientsHidro", async (req, res) => {
+  res.json({ content: await getClientsHidro() });
 });
 
 app.listen(PORT, () => {

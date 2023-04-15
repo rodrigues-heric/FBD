@@ -45,6 +45,11 @@ const vipCostsSubtitle: string = "Descubra quanto eles gastaram em lazer";
 const vipCostsButtonText: string = "Descubra";
 const vipCostsPageLink: string = "/vipcosts";
 
+const hidroTitle: string = "Veja quais clientes usaram hidromassagem";
+const hidroSubtitle: string = "E que consumiram alimentos leves";
+const hidroButtonText: string = "Veja mais";
+const hidroPageLink: string = "/hidro";
+
 const PanelComponent: React.FC = () => {
   const routeParams = useParams();
   const userName = routeParams.userName;
@@ -106,6 +111,15 @@ const PanelComponent: React.FC = () => {
                 subtitle={notPayersSubtitle}
                 buttonText={notPayersButtonText}
                 pageLink={`${notPayersPageLink}/${userName}`}
+              ></CardPanelComponent>
+            </div>
+            <div className="row mt-4">
+              <CardPanelComponent
+                imgName={logoImage}
+                title={hidroTitle}
+                subtitle={hidroSubtitle}
+                buttonText={hidroButtonText}
+                pageLink={`${hidroPageLink}/${userName}`}
               ></CardPanelComponent>
             </div>
           </div>
