@@ -24,6 +24,13 @@ FROM Departamento NATURAL JOIN Funcionario NATURAL JOIN Gerente NATURAL JOIN Pes
 GROUP BY nomed, nome
 `;
 
+const getCatCafeGirlsQuery = `
+SELECT Pessoa.nome, Profissao.nome as profissao
+FROM Pessoa NATURAL JOIN Funcionario JOIN Profissao ON Funcionario.profissao = Profissao.codigo
+GROUP BY Pessoa.nome, Profissao.nome, Pessoa.genero
+HAVING genero = 'F'
+`;
+
 async function getVIPClients() {
   try {
     const res = await pool.query(getVIPClientsQuery);
@@ -54,8 +61,19 @@ async function getDeptAvgSalary() {
   }
 }
 
+async function getCatCafeGirls() {
+  try {
+    const res = await pool.query(getCatCafeGirlsQuery);
+    return res;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 module.exports = {
   getVIPClients,
   getClients,
   getDeptAvgSalary,
+  getCatCafeGirls,
 };

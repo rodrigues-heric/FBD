@@ -5,11 +5,13 @@ import CardPanelComponent from "../generics/card-panel/card-panel";
 
 import "./panel.css";
 
-const foodImagePath: string = "backfat_soy_sauce_ramen.png";
-const foodTitle: string = "Alimentação";
-const foodSubtitle: string = "Escolha o que deseja comer";
-const foodButtonText: string = "Fazer pedido";
-const foodPageLink: string = "/food";
+const logoImage: string = "cat_cafe_logo.png";
+const logoImageDark: string = "cat_cafe_logo_dark.png";
+
+const womenWorkersTitle: string = "Funcionárias";
+const womenWorkersSubtitle: string = "Conheça o CatCafe++ Girls";
+const womenWorkersButtonText: string = "Saiba mais";
+const womenWorkersPageLink: string = "/girls";
 
 const accommodationImagePath: string = "vip_room.png";
 const accommodationTitle: string = "Acomodação";
@@ -47,11 +49,11 @@ const PanelComponent: React.FC = () => {
           <div className="col-4 center-align">
             <div className="row">
               <CardPanelComponent
-                imgName={foodImagePath}
-                title={foodTitle}
-                subtitle={foodSubtitle}
-                buttonText={foodButtonText}
-                pageLink={`${foodPageLink}/${userName}`}
+                imgName={logoImageDark}
+                title={womenWorkersTitle}
+                subtitle={womenWorkersSubtitle}
+                buttonText={womenWorkersButtonText}
+                pageLink={`${womenWorkersPageLink}/${userName}`}
               ></CardPanelComponent>
             </div>
             <div className="row mt-4">

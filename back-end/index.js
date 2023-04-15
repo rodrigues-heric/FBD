@@ -23,6 +23,12 @@ async function getDeptAvgSalary() {
   return result.rows;
 }
 
+async function getCatCafeGirls() {
+  const result = await localDB.getCatCafeGirls();
+  console.log("Fetched CatCafé++ Girls.");
+  return result.rows;
+}
+
 app.get("/getVIPClients", async (req, res) => {
   res.json({ content: await getVIPClients() });
 });
@@ -33,6 +39,10 @@ app.get("/getClients", async (req, res) => {
 
 app.get("/getDeptAvgSalary", async (req, res) => {
   res.json({ content: await getDeptAvgSalary() });
+});
+
+app.get("/getCatCafeGirls", async (req, res) => {
+  res.json({ content: await getCatCafeGirls() });
 });
 
 app.listen(PORT, () => {
