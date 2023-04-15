@@ -24,11 +24,21 @@ const mackbookSubtitle: string =
 const mackbookButtonText: string = "Descobrir";
 const macbookPageLink: string = "/mackbook";
 
-const avgSalaryImagePath: string = "cat_cafe_logo.png";
 const avgSalaryTitle: string = "Média salarial por departamento";
 const avgSalarySubtitle: string = "Conheça nossos gerentes e departamentos";
 const avgSalaryButtonText: string = "Saiba mais";
 const avgSalaryPageLink: string = "/about";
+
+const notPayersTitle: string = "Clientes que não gastaram no local";
+const notPayersSubtitle: string =
+  "Veja quem não consumiu qualquer produto no CatCafé++";
+const notPayersButtonText: string = "Saiba mais";
+const notPayersPageLink: string = "/notpayers";
+
+const aboutTitle: string = "Conheça nossos gerentes";
+const aboutSubtitle: string = "Descubra a média salárial por departamento";
+const aboutButtonText: string = "Saiba mais";
+const aboutPageLink: string = "/about";
 
 const PanelComponent: React.FC = () => {
   const routeParams = useParams();
@@ -57,7 +67,7 @@ const PanelComponent: React.FC = () => {
             </div>
             <div className="row mt-4">
               <CardPanelComponent
-                imgName={avgSalaryImagePath}
+                imgName={logoImage}
                 title={avgSalaryTitle}
                 subtitle={avgSalarySubtitle}
                 buttonText={avgSalaryButtonText}
@@ -66,22 +76,44 @@ const PanelComponent: React.FC = () => {
             </div>
           </div>
           <div className="col-4 center-align">
-            <CardPanelComponent
-              imgName={logoImage}
-              title={vipIogaTitle}
-              subtitle={vipIogaSubtitle}
-              buttonText={vipIogaButtonText}
-              pageLink={`${vipIogaPageLink}/${userName}`}
-            ></CardPanelComponent>
+            <div className="row">
+              <CardPanelComponent
+                imgName={logoImage}
+                title={vipIogaTitle}
+                subtitle={vipIogaSubtitle}
+                buttonText={vipIogaButtonText}
+                pageLink={`${vipIogaPageLink}/${userName}`}
+              ></CardPanelComponent>
+            </div>
+            <div className="row mt-4">
+              <CardPanelComponent
+                imgName={logoImageDark}
+                title={notPayersTitle}
+                subtitle={notPayersSubtitle}
+                buttonText={notPayersButtonText}
+                pageLink={`${notPayersPageLink}/${userName}`}
+              ></CardPanelComponent>
+            </div>
           </div>
           <div className="col-4 center-align">
-            <CardPanelComponent
-              imgName={logoImageDark}
-              title={mackbookTitle}
-              subtitle={mackbookSubtitle}
-              buttonText={mackbookButtonText}
-              pageLink={`${macbookPageLink}/${userName}`}
-            ></CardPanelComponent>
+            <div className="row">
+              <CardPanelComponent
+                imgName={logoImageDark}
+                title={mackbookTitle}
+                subtitle={mackbookSubtitle}
+                buttonText={mackbookButtonText}
+                pageLink={`${macbookPageLink}/${userName}`}
+              ></CardPanelComponent>
+            </div>
+            <div className="row mt-4">
+              <CardPanelComponent
+                imgName={logoImage}
+                title={aboutTitle}
+                subtitle={aboutSubtitle}
+                buttonText={aboutButtonText}
+                pageLink={`${aboutPageLink}/${userName}`}
+              ></CardPanelComponent>
+            </div>
           </div>
         </div>
       </div>

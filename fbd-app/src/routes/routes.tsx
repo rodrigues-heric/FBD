@@ -7,6 +7,7 @@ import AboutComponent from "../components/about/about";
 import GirlsComponent from "../components/girls/girls";
 import VipIogaComponent from "../components/vipIoga/vipIoga";
 import MackbookComponent from "../components/mackbook/mackbook";
+import NotPayersComponent from "../components/notpayers/notpayers";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
         <Route Component={GirlsComponent} path="/girls/:userName" />
         <Route Component={VipIogaComponent} path="/vipioga/:userName" />
         <Route Component={MackbookComponent} path="/mackbook/:userName" />
+        <Route Component={NotPayersComponent} path="/notpayers/:userName" />
       </Routes>
     </BrowserRouter>
   );

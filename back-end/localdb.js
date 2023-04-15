@@ -61,6 +61,20 @@ AND codigo IN (SELECT codcli
       FROM FastFood)))
 `;
 
+const getNotPayersQuery = `
+SELECT nome
+FROM Cliente c NATURAL JOIN Pessoa
+WHERE NOT EXISTS (SELECT codcli
+  FROM ConsumoAlimenticio a
+  WHERE a.codcli = c.codigo)
+AND NOT EXISTS (SELECT codcliente
+  FROM ReservasWorkspaces r
+  WHERE r.codcliente = c.codigo)
+AND NOT EXISTS  (SELECT codcliente
+  FROM ReservasQuartos q
+  WHERE q.codcliente = c.codigo)
+`;
+
 async function getVIPClients() {
   try {
     const res = await pool.query(getVIPClientsQuery);
@@ -121,6 +135,16 @@ async function getMackbook() {
   }
 }
 
+async function getNotPayers() {
+  try {
+    const res = await pool.query(getNotPayersQuery);
+    return res;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 module.exports = {
   getVIPClients,
   getClients,
@@ -128,4 +152,5 @@ module.exports = {
   getCatCafeGirls,
   getVipIoga,
   getMackbook,
+  getNotPayers,
 };
