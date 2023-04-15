@@ -6,6 +6,7 @@ import PanelComponent from "../components/panel/panel";
 import AboutComponent from "../components/about/about";
 import GirlsComponent from "../components/girls/girls";
 import VipIogaComponent from "../components/vipIoga/vipIoga";
+import MackbookComponent from "../components/mackbook/mackbook";
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
         <Route Component={AboutComponent} path="/about/:userName" />
         <Route Component={GirlsComponent} path="/girls/:userName" />
         <Route Component={VipIogaComponent} path="/vipioga/:userName" />
+        <Route Component={MackbookComponent} path="/mackbook/:userName" />
       </Routes>
     </BrowserRouter>
   );

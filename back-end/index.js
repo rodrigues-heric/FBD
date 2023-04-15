@@ -35,6 +35,12 @@ async function getVipIoga() {
   return result.rows;
 }
 
+async function getMackbook() {
+  const result = await localDB.getMackbook();
+  console.log("Fetched Macbook clients.");
+  return result.rows;
+}
+
 app.get("/getVIPClients", async (req, res) => {
   res.json({ content: await getVIPClients() });
 });
@@ -53,6 +59,10 @@ app.get("/getCatCafeGirls", async (req, res) => {
 
 app.get("/getVipIoga", async (req, res) => {
   res.json({ content: await getVipIoga() });
+});
+
+app.get("/getMackbook", async (req, res) => {
+  res.json({ content: await getMackbook() });
 });
 
 app.listen(PORT, () => {

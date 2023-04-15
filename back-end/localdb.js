@@ -43,6 +43,24 @@ WHERE codigo IN (SELECT codcliente
       WHERE categoria = 'ioga')))
 `;
 
+const getMackbookQuery = `
+SELECT nome
+FROM Pessoa
+WHERE codigo IN ( SELECT codigo
+  FROM Cliente
+  WHERE codigo IN (SELECT codcliente
+    FROM ReservasWorkspaces
+    WHERE codworkspace IN ( SELECT codigo
+      FROM Workspace
+      WHERE computador = 'macbook')))
+AND codigo IN (SELECT codcli
+  FROM ConsumoAlimenticio
+  WHERE codali IN (SELECT codigo
+    FROM Alimento
+    WHERE codigo IN (SELECT codigo
+      FROM FastFood)))
+`;
+
 async function getVIPClients() {
   try {
     const res = await pool.query(getVIPClientsQuery);
@@ -93,10 +111,21 @@ async function getVipIoga() {
   }
 }
 
+async function getMackbook() {
+  try {
+    const res = await pool.query(getMackbookQuery);
+    return res;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 module.exports = {
   getVIPClients,
   getClients,
   getDeptAvgSalary,
   getCatCafeGirls,
   getVipIoga,
+  getMackbook,
 };

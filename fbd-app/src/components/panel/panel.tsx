@@ -18,11 +18,11 @@ const vipIogaSubtitle: string = "Veja quais clientes VIP fizeram ioga";
 const vipIogaButtonText: string = "Descobrir";
 const vipIogaPageLink: string = "/vipioga";
 
-const recreationImagePath: string = "videogame.png";
-const recreationTitle: string = "Lazer";
-const recreationSubtitle: string = "Escolha uma atividade";
-const recreationButtonText: string = "Selecionar atividade";
-const recreationPageLink: string = "/recreation";
+const mackbookTitle: string = "Workspaces com Mackbook";
+const mackbookSubtitle: string =
+  "Saiba quais clientes alugaram workspaces com Mackbook";
+const mackbookButtonText: string = "Descobrir";
+const macbookPageLink: string = "/mackbook";
 
 const avgSalaryImagePath: string = "cat_cafe_logo.png";
 const avgSalaryTitle: string = "Média salarial por departamento";
@@ -76,11 +76,11 @@ const PanelComponent: React.FC = () => {
           </div>
           <div className="col-4 center-align">
             <CardPanelComponent
-              imgName={recreationImagePath}
-              title={recreationTitle}
-              subtitle={recreationSubtitle}
-              buttonText={recreationButtonText}
-              pageLink={`${recreationPageLink}/${userName}`}
+              imgName={logoImageDark}
+              title={mackbookTitle}
+              subtitle={mackbookSubtitle}
+              buttonText={mackbookButtonText}
+              pageLink={`${macbookPageLink}/${userName}`}
             ></CardPanelComponent>
           </div>
         </div>
