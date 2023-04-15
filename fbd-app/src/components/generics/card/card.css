@@ -1,0 +1,12 @@
+.card-background {
+  color: var(--dark-font);
+  background-color: var(--dark-primary);
+}
+
+.card-max-width {
+  max-width: 500px;
+}
+
+.image-height {
+  height: 350px;
+}
